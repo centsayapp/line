@@ -12,12 +12,12 @@ type CarouselContainer struct {
 func (t CarouselContainer) FlexContainer() {}
 
 type BubbleContainer struct {
-	Type   string         `json:"type,omitempty"`
-	Size   string         `json:"size,omitempty"`
-	Header *BoxComponent  `json:"header,omitempty"`
-	Hero   *FlexComponent `json:"hero,omitempty"`
-	Body   *BoxComponent  `json:"body,omitempty"`
-	Footer *BoxComponent  `json:"footer,omitempty"`
+	Type   string        `json:"type,omitempty"`
+	Size   string        `json:"size,omitempty"`
+	Header *BoxComponent `json:"header,omitempty"`
+	Hero   FlexComponent `json:"hero,omitempty"`
+	Body   *BoxComponent `json:"body,omitempty"`
+	Footer *BoxComponent `json:"footer,omitempty"`
 }
 
 func (t BubbleContainer) FlexContainer() {}
