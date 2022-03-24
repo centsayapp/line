@@ -108,6 +108,7 @@ type ActionComponent struct {
 	Label       string `json:"label,omitempty"`
 	Data        string `json:"data,omitempty"`
 	DisplayText string `json:"displayText,omitempty"`
+	URI         string `json:"uri,omitempty"`
 }
 
 func CreateFlexMessage(message FlexContainer, altText string) LineMessage {
