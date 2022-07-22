@@ -37,6 +37,12 @@ type BoxComponent struct {
 	Contents        []FlexComponent  `json:"contents"`
 	Action          *ActionComponent `json:"action,omitempty"`
 
+	Position     string `json:"position,omitempty"`
+	OffsetStart  string `json:"offsetStart,omitempty"`
+	OffsetEnd    string `json:"offsetEnd,omitempty"`
+	OffsetTop    string `json:"offsetTop,omitempty"`
+	OffsetBottom string `json:"offsetBottom,omitempty"`
+
 	// Padding
 	PaddingAll    string `json:"paddingAll,omitempty"`
 	PaddingTop    string `json:"paddingTop,omitempty"`
