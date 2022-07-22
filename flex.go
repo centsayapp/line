@@ -63,15 +63,16 @@ type TextComponent struct {
 func (t TextComponent) FlexComponent() {}
 
 type ImageComponent struct {
-	Type       string `json:"type,omitempty"`
-	Size       string `json:"size,omitempty"`
-	Flex       int    `json:"flex,omitempty"`
-	Align      string `json:"align,omitempty"`
-	Gravity    string `json:"gravity,omitempty"`
-	AspectMode string `json:"aspectMode,omitempty"`
-	Margin     string `json:"margin,omitempty"`
-	Wrap       bool   `json:"wrap,omitempty"`
-	URL        string `json:"url,omitempty"`
+	Type        string `json:"type,omitempty"`
+	Size        string `json:"size,omitempty"`
+	Flex        int    `json:"flex,omitempty"`
+	Align       string `json:"align,omitempty"`
+	Gravity     string `json:"gravity,omitempty"`
+	AspectMode  string `json:"aspectMode,omitempty"`
+	AspectRatio string `json:"aspectRatio,omitempty"`
+	Margin      string `json:"margin,omitempty"`
+	Wrap        bool   `json:"wrap,omitempty"`
+	URL         string `json:"url,omitempty"`
 }
 
 func (t ImageComponent) FlexComponent() {}
