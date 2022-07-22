@@ -74,6 +74,13 @@ type TextComponent struct {
 
 func (t TextComponent) FlexComponent() {}
 
+type FillerComponent struct {
+	Type string `json:"type,omitempty"`
+	Flex int    `json:"flex,omitempty"`
+}
+
+func (t FillerComponent) FlexComponent() {}
+
 type ImageComponent struct {
 	Type        string `json:"type,omitempty"`
 	Size        string `json:"size,omitempty"`
