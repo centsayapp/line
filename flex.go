@@ -65,6 +65,11 @@ type TextComponent struct {
 	Margin  string `json:"margin,omitempty"`
 	Wrap    bool   `json:"wrap,omitempty"`
 	Gravity string `json:"gravity,omitempty"`
+
+	OffsetStart  string `json:"offsetStart,omitempty"`
+	OffsetEnd    string `json:"offsetEnd,omitempty"`
+	OffsetTop    string `json:"offsetTop,omitempty"`
+	OffsetBottom string `json:"offsetBottom,omitempty"`
 }
 
 func (t TextComponent) FlexComponent() {}
