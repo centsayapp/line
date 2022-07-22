@@ -29,6 +29,7 @@ type BoxComponent struct {
 	Spacing         string           `json:"spacing,omitempty"`
 	BackgroundColor string           `json:"backgroundColor,omitempty"`
 	BorderWidth     string           `json:"borderWidth,omitempty"`
+	BorderColor     string           `json:"borderColor,omitempty"`
 	CornerRadius    string           `json:"cornerRadius,omitempty"`
 	Flex            int              `json:"flex,omitempty"`
 	Width           string           `json:"width,omitempty"`
