@@ -14,14 +14,26 @@ type LineEventType string
 const LineEventTypeMessage LineEventType = "message"
 
 type LineEvent struct {
-	Type      LineEventType    `json:"type"` //values: "message"
-	Mode      string           `json:"mode"` //value: "active", "standby"
-	Timestamp int64            `json:"timestamp"`
-	Source    *LineEventSource `json:"source"`
+	Type            LineEventType    `json:"type"` //values: "message"
+	Mode            string           `json:"mode"` //value: "active", "standby"
+	Timestamp       int64            `json:"timestamp"`
+	Source          *LineEventSource `json:"source"`
+	WebhookEventID  string           `json:"webhookEventId"`
+	DeliveryContext *DeliveryContext `json:"deliveryContext,omitempty"`
 
 	// Message event
-	ReplyToken string       `json:"replyToken,omitempty"`
-	Message    *LineMessage `json:"message"`
+	ReplyToken string           `json:"replyToken,omitempty"`
+	Message    *LineMessage     `json:"message,omitempty"`
+	Postback   *PostbackMessage `json:"postback,omitempty"`
+}
+
+type DeliveryContext struct {
+	IsRedelivery bool `json:"isRedelivery"`
+}
+
+type PostbackMessage struct {
+	Data   string                 `json:"data,omitempty"`
+	Params map[string]interface{} `json:"params,omitempty"`
 }
 
 type LineMessageType string
