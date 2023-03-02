@@ -1,8 +1,11 @@
 package line
 
 const (
-	replyURL       string = "https://api.line.me/v2/bot/message/reply"
-	getUserProfile string = "https://api.line.me/v2/bot/profile"
+	pushMessageAPI      string = "https://api.line.me/v2/bot/message/push"
+	replyMessageAPI     string = "https://api.line.me/v2/bot/message/reply"
+	multicastMessageAPI string = "https://api.line.me/v2/bot/message/multicast"
+
+	getUserProfileAPI string = "https://api.line.me/v2/bot/profile"
 )
 
 type LineWebhook struct {
@@ -88,4 +91,14 @@ type LineEventSource struct {
 type LineReplyMessage struct {
 	ReplyToken string        `json:"replyToken"`
 	Messages   []LineMessage `json:"messages"`
+}
+
+type LinePushMessage struct {
+	To       string        `json:"to"`
+	Messages []LineMessage `json:"messages"`
+}
+
+type LineMulticastMessage struct {
+	To       []string      `json:"to"`
+	Messages []LineMessage `json:"messages"`
 }
