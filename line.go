@@ -1,7 +1,8 @@
 package line
 
 const (
-	replyURL string = "https://api.line.me/v2/bot/message/reply"
+	replyURL       string = "https://api.line.me/v2/bot/message/reply"
+	getUserProfile string = "https://api.line.me/v2/bot/profile"
 )
 
 type LineWebhook struct {

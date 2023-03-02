@@ -32,6 +32,33 @@ func (l *LineHandler) SignLineRequest(body string) string {
 	return signature
 }
 
+func (l *LineHandler) GetUserProfile(uid string) (*LineUserProfile, error) {
+	req, err := http.NewRequest("GET", getUserProfile+"/"+uid, nil)
+	if err != nil {
+		return nil, err
+	}
+	req.Header.Set("Authorization", "Bearer "+l.ChannelToken)
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("error calling Line get user profile API: %s", err)
+	}
+	defer resp.Body.Close()
+	respBody, _ := ioutil.ReadAll(resp.Body)
+
+	if resp.StatusCode != 200 {
+		return nil, fmt.Errorf("cannot get user profile: %s", string(respBody))
+	}
+
+	profile := new(LineUserProfile)
+	err = json.Unmarshal(respBody, profile)
+	if err != nil {
+		return nil, fmt.Errorf("cannot unmarshal user profile: %s", err)
+	}
+
+	return profile, nil
+}
+
 func (l *LineHandler) SendReplyMessage(token string, messages LineMessage) error {
 	replyMsg := &LineReplyMessage{
 		ReplyToken: token,
